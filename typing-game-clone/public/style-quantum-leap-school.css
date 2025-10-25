@@ -40,6 +40,36 @@ body::after{
 /* Slight parallax movement for the emblem to feel alive */
 @keyframes emblemFloat { 0% { transform: translateY(0) rotate(-8deg) } 50% { transform: translateY(-6px) rotate(-8deg) } 100% { transform: translateY(0) rotate(-8deg) } }
 body::after{ animation: emblemFloat 8s ease-in-out infinite }
+/* Decorative floating watermark text (keeps "Quantum Leap School" in the back) */
+body::before{
+  content: "Quantum Leap School";
+  position:fixed;
+  right:4vw;
+  top:12vh;
+  pointer-events:none;
+  z-index:0;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:8px;
+  white-space:nowrap;
+  font-size:12vmin;
+  color:rgba(125,211,252,0.06);
+  mix-blend-mode:screen;
+  filter:blur(0.6px) saturate(1.05);
+  opacity:0.08;
+  transform: rotate(12deg);
+  transform-origin:center;
+  will-change:transform,opacity;
+  animation: whir 12s linear infinite;
+}
+
+@keyframes whir {
+  0%   { transform: rotate(12deg) translateY(0) scale(1) }
+  25%  { transform: rotate(6deg)  translateY(-6px) scale(1.01) }
+  50%  { transform: rotate(-6deg) translateY(-10px) scale(1.02) }
+  75%  { transform: rotate(6deg)  translateY(-6px) scale(1.01) }
+  100% { transform: rotate(12deg) translateY(0) scale(1) }
+}
 .topbar{display:flex;gap:12px;align-items:center;padding:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(4px)}.topbar .letters{flex:1}
 .brand{font-weight:800;font-size:18px;color:#bfe7ff;padding:6px 10px;border-radius:8px;text-shadow:0 6px 18px rgba(11,15,42,0.6);letter-spacing:0.6px}
 .brand::after{content:'';display:inline-block;margin-left:8px;width:10px;height:10px;background:radial-gradient(circle,#7dd3fc,#60a5fa);border-radius:50%;box-shadow:0 6px 20px rgba(96,165,250,0.35)}
