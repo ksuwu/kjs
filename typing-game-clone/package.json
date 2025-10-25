@@ -1,0 +1,26 @@
+{
+  "name": "typing-game-clone",
+  "version": "1.0.0",
+  "description": "A typing simulator game designed for kids, featuring a fun background and a timer.",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "build": "tsc",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "typing",
+    "game",
+    "kids",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "nodemon": "^2.0.15"
+  }
+}
