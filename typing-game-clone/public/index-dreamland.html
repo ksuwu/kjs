@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Typing Bubbles — Dreamland</title>
+    <link rel="stylesheet" href="style-dreamland.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">Dreamland Typing</div>
+        <div class="letters" id="letters">Collected: <span id="collected"> </span></div>
+        <div class="current">Current: <span id="currentTyped"></span></div>
+        <div class="score" id="score">Score: 0</div>
+        <div class="timer" id="timer">Time: 0.0s</div>
+    <div id="largeTimer" class="large-timer" aria-live="polite" style="display:none">60.0s</div>
+        <div class="controls">
+            <button id="startBtn" class="start-btn-large">Start</button>
+            <button id="addMinBtn" title="Add 1 minute">+1m</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+    </header>
+
+    <main id="gameArea" tabindex="0">
+        <div id="info" class="overlay">Press Start to play. Pop the dream bubbles!</div>
+        <div id="hint" class="hint" aria-live="polite">Press: <span id="hintLetter"> </span></div>
+        <div id="touchKeyboard" class="touch-keyboard" aria-hidden="true"></div>
+    </main>
+
+    <footer class="footer">Type the letters shown in the bubble to pop them. Have fun!</footer>
+
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+</body>
+</html>

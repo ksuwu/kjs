@@ -1,0 +1,58 @@
+/* Dreamland background stylesheet */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter, system-ui, Arial, sans-serif;display:flex;flex-direction:column;min-height:100vh;color:#213047}
+
+/* pastel sky gradient */
+body{
+  background: linear-gradient(180deg, #fbe8ff 0%, #e7f7ff 40%, #fff8e6 100%);
+}
+
+/* decorative SVG pattern overlay (the child-friendly vectors) */
+body::after{
+  content: '';
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background-image: url('dreamland-pattern.svg');
+  background-repeat: repeat;
+  background-size: 600px 400px; /* tiles the pattern */
+  opacity: 0.98;
+  mix-blend-mode: normal;
+}
+
+/* soft vignette to keep focus in center */
+body::before{
+  content:'';
+  position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;
+  background: radial-gradient(60% 50% at 50% 40%, rgba(255,255,255,0) 0%, rgba(0,0,0,0.04) 100%);
+}
+
+.topbar{display:flex;gap:12px;align-items:center;padding:12px;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px)}
+.brand{font-weight:900;font-size:20px;color:#5b3b8a;padding:6px 10px;border-radius:10px}
+
+/* Timer in the topbar — make it more visible for kids */
+.timer{font-weight:700;font-size:16px;color:#5b3b8a;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,0.85);box-shadow:0 2px 6px rgba(91,59,138,0.08);}
+
+/* Large centered timer for clarity during play */
+.large-timer{
+  position:relative; /* placed in the header flow */
+  font-weight:900;
+  font-size:18px;
+  color:#ffffff;
+  background:linear-gradient(90deg,#ff8fab,#ffd166);
+  padding:8px 12px;
+  border-radius:18px;
+  box-shadow:0 6px 18px rgba(91,59,138,0.12);
+  margin-left:6px;
+}
+
+/* make UI elements feel soft */
+.start-btn-large{background:#ffd166;color:#213047;padding:12px 18px;border-radius:14px;border:0}
+.bubble{background:linear-gradient(135deg,#ffd6e0,#d6f0ff);color:#213047}
+
+/* small responsive tweaks */
+@media (max-width:700px){
+  body::after{ background-size: 420px 280px }
+  .brand{font-size:16px}
+}

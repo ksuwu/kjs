@@ -205,7 +205,11 @@ function tick(){
   if (!running) return requestAnimationFrame(tick);
   const now = performance.now();
   const t = (now - startTime)/1000;
-  timerEl.textContent = `Time: ${t.toFixed(1)}s`;
+  // If a large on-page timer exists, let timer.js control the visible countdown
+  const largeTimerEl = document.getElementById('largeTimer');
+  if (!largeTimerEl && timerEl) {
+    timerEl.textContent = `Time: ${t.toFixed(1)}s`;
+  }
   requestAnimationFrame(tick);
 }
 
